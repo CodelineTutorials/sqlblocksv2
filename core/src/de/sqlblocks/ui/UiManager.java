@@ -3,15 +3,15 @@ package de.sqlblocks.ui;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 public class UiManager {
 
     private static Vector2 mousePos = new Vector2(0, 0);
     private static Texture backgroundTexture = null;
 
-    public static void refresh(float viewpointHeight) {
-        mousePos.x = Gdx.input.getX();
-        mousePos.y = viewpointHeight - Gdx.input.getY();
+    public static void refresh(ExtendViewport viewport) {
+        mousePos = viewport.unproject(new Vector2(Gdx.input.getX(), Gdx.input.getY()));
     }
 
     public static void draw(float viewpointWidth, float viewpointHeight, UiPart... parts) {

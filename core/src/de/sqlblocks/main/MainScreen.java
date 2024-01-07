@@ -38,8 +38,8 @@ public class MainScreen implements Screen {
     public void render(float delta) {
         ScreenUtils.clear(100, 100, 100, 1);
         StaticObjects.batch.setProjectionMatrix(camera.combined);
-//        StaticObjects.renderer.setProjectionMatrix(camera.combined);
-        UiManager.refresh(camera.viewportHeight);
+        StaticObjects.renderer.setProjectionMatrix(camera.combined);
+        UiManager.refresh(viewport);
 
         StaticObjects.batch.begin();
         StaticObjects.batch.draw(test, 30, 30, 50, 50);

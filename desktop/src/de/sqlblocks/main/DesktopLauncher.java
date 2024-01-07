@@ -11,6 +11,7 @@ public class DesktopLauncher {
 
 		config.setForegroundFPS(60);
 		config.setTitle("sqlblocks2"); // don't change the title of the window as the title is used to make it float in my i3 session!!
+		config.setWindowedMode(1000, 700);
 
 		new Lwjgl3Application(new Main(), config);
 	}
